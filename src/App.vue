@@ -12,10 +12,10 @@
         <span>Past Orders</span>
       </router-link>
     </nav>
-    <!-- <router-link @click="toggleSidebar" class="top-bar-cart-link">
+    <div @click="toggleSidebar" class="top-bar-cart-link">
       <i class="icofont-cart-alt icofont-1x"></i>
       <span>Cart ({{ totalQuantity }})</span>
-    </router-link> -->
+    </div>
   </header>
   <router-view :inventory="inventory" />
   <Sidebar v-if="showSidebar" :toggle="toggleSidebar" :cart="cart" :inventory="inventory" :remove="removeItem" />
@@ -31,7 +31,7 @@ export default {
   },
   data () {
     return {
-      showSidebar: true,
+      showSidebar: false,
       inventory: food,
       cart: {}
     }
